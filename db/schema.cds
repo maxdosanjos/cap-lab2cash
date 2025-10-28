@@ -21,8 +21,8 @@ entity Orders.Transactions : cuid {
 }
 
 entity Customers : cuid{
-    wallet                  : Association to one Wallet on wallet.customer = $self;
-    orders                  : Association to many Orders on order.customer = $self;
+    wallet                  : Association to one Wallets on wallet.customer = $self;
+    orders                  : Association to many Orders on orders.customer = $self;
     business_partner_id     : Integer
 }
 
