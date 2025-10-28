@@ -1,34 +1,22 @@
-# CAP lab2cash
-_out
-*.db
-*.sqlite
-connection.properties
-default-*.json
-.cdsrc-private.json
-gen/
+# Node.js dependencies
 node_modules/
-target/
 
-# Web IDE, App Studio
-.che/
-.gen/
+# Local database files
+db/data/*.db
+db/data/*.sqlite
 
-# MTA
-*_mta_build_tmp
-*.mtar
-mta_archives/
+# Generated artifacts
+gen/
+dist/
 
-# Other
-.DS_Store
-*.orig
+# Configuration files
+.env
+*.env.local
+
+# Log files
 *.log
 
-*.iml
-*.flattened-pom.xml
-
-# IDEs
-# .vscode
-# .idea
-
-# @cap-js/cds-typer
-@cds-models
+# IDE specific files
+.vscode/
+.project
+.settings/
