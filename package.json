@@ -13,7 +13,11 @@
     "@sap/cds-dk": "^9"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "build": "mbt build -s '/home/user/projects/lab2cash-proxy'; sleep 2;", 
+    "deploy": "cf deploy mta_archives/lab2cash-proxy_1.0.0.mtar -f", 
+    "//build": "mbt build -t gen --mtar mta.tar",
+    "//deploy": "cf deploy gen/mta.mtar -f"
   },
   "private": true,
   "cds": {
