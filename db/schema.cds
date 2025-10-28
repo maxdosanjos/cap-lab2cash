@@ -7,7 +7,7 @@ entity Orders : cuid, managed {
     customer                : Association to one Customers;
     applied_cashback        : Integer;
     amount                  : Integer;
-    transactions            : Composition of Orders.Transactions on transactions.order = $self;
+    transactions            : Composition of Orders.Transactions on transactions.orders = $self;
 }
 
 entity Orders.Transactions : cuid {
