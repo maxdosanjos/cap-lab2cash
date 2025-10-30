@@ -20,3 +20,5 @@ dist/
 .vscode/
 .project
 .settings/
+# added by cds
+.cdsrc-private.json

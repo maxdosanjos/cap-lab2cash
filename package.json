@@ -4,18 +4,22 @@
   "description": "A simple CAP project.",
   "dependencies": {
     "@cap-js/hana": "^2",
+    "@sap-cloud-sdk/connectivity": "4.1.2",
+    "@sap-cloud-sdk/http-client": "^4.1.2",
+    "@sap-cloud-sdk/resilience": "^4.1.2",
     "@sap/cds": "^9",
     "@sap/xssec": "^4",
     "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
-    "@sap/cds-dk": "^9"
+    "@sap/cds-dk": "^9",
+    "@sap/dev-cap-tools": "^1.47.10"
   },
   "scripts": {
     "start": "cds-serve",
-    "build": "mbt build -s '/home/user/projects/lab2cash-proxy'; sleep 2;", 
-    "deploy": "cf deploy mta_archives/lab2cash-proxy_1.0.0.mtar -f", 
+    "build": "mbt build -s '/home/user/projects/lab2cash'; sleep 2;",
+    "deploy": "cf deploy mta_archives/lab2cash_1.0.0.mtar -f",
     "//build": "mbt build -t gen --mtar mta.tar",
     "//deploy": "cf deploy gen/mta.mtar -f"
   },
@@ -23,7 +27,24 @@
   "cds": {
     "requires": {
       "[production]": {
-        "auth": "xsuaa"
+        "auth": "xsuaa",
+        "db": "hana"
+      },
+      "LAB2CASH_PROXY": {
+        "kind": "odata",
+        "model": "srv/external/LAB2CASH_PROXY",
+        "credentials": {
+          "destination": "LAB2CASH_PROXY",
+          "path": "/proxy"
+        },
+        "[production]": {
+          "credentials": {
+            "destination": "LAB2CASH_PROXY",
+            "path": "/proxy"
+          }
+        },
+        "csrf": true,
+        "csrfInBatch": true
       }
     }
   }

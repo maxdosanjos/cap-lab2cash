@@ -1,3 +1,4 @@
+using { LAB2CASH_PROXY } from '../srv/external/LAB2CASH_PROXY.cds'; 
 namespace cap.l2l.lab2cash;
 
 using{ cuid, managed } from '@sap/cds/common';
