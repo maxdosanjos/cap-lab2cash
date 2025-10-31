@@ -38,13 +38,9 @@
           "path": "/proxy"
         },
         "[production]": {
-          "credentials": {
-            "destination": "LAB2CASH_PROXY",
-            "path": "/proxy"
-          }
-        },
-        "csrf": true,
-        "csrfInBatch": true
+          "csrf": true,
+          "csrfInBatch": true
+        }
       }
     }
   }

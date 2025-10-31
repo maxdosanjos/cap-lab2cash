@@ -1,4 +1,3 @@
-using { LAB2CASH_PROXY } from '../srv/external/LAB2CASH_PROXY.cds'; 
 namespace cap.l2l.lab2cash;
 
 using{ cuid, managed } from '@sap/cds/common';
@@ -21,7 +20,7 @@ entity Orders.Transactions : cuid {
     amount                   : Integer;
 }
 
-entity Customers : cuid{
+entity Customers : cuid, managed{
     wallet                  : Association to one Wallets on wallet.customer = $self;
     orders                  : Association to many Orders on orders.customer = $self;
     business_partner_id     : Integer
