@@ -21,7 +21,7 @@ entity Orders.Transactions : cuid {
 }
 
 entity Customers : cuid, managed{
-    wallet                  : Association to one Wallets on wallet.customer = $self;
+    wallet                  : Composition of one Wallets on wallet.customer = $self;
     orders                  : Association to many Orders on orders.customer = $self;
     business_partner_id     : Integer
 }
@@ -33,6 +33,7 @@ entity Wallets : cuid {
 }
 
 entity Parameters {
+    key ID                      : Integer default 1;  // chave fixa para um único registro
     is_cashback_active          : Boolean;
     cashback_return             : Decimal;
     cashback_redemption_limit   : Decimal;

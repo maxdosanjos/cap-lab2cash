@@ -49,6 +49,11 @@ service Main @(path: '/Main') {
     ]}]
     entity Wallets as projection on db.Wallets;
 
+    //Optional
+    event balanceUpdated:{
+        wallet_ID   :   String;
+    }
+
     //Parameters
     @restrict: [{grant: [
         'UPDATE',

@@ -3,17 +3,27 @@
 @password=
 
 
-### Wallets
+### Main.Wallets
 # @name Wallets_GET
 GET {{server}}/Main/Wallets?$expand=customer
 Authorization: Basic {{username}}:{{password}}
 
-### Parameters
+### Main.Orders
+# @name Customers_GET
+GET {{server}}/Main/Customers?$expand=orders
+Authorization: Basic {{username}}:{{password}}
+
+### Main.Orders
+# @name Orders_GET
+GET {{server}}/Main/Orders?$expand=transactions
+Authorization: Basic {{username}}:{{password}}
+
+### Main.Parameters
 # @name Parameters_GET
 GET {{server}}/Main/getParameters()
 Authorization: Basic {{username}}:{{password}}
 
-### Parameters
+### Main.Parameters
 # @name Parameters_PATCH
 POST {{server}}/Main/updateParameters
 Content-Type: application/json
@@ -22,7 +32,7 @@ Authorization: Basic {{username}}:{{password}}
 {
     "parameters" : {
         "is_cashback_active": true,
-        "cashback_return": "20.5",
+        "cashback_return": "20",
         "cashback_redemption_limit": "20"
     }
 }

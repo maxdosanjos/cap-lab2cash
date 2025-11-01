@@ -4,8 +4,6 @@ version: 1.0.0
 description: "Cashback extension project."
 parameters:
   enable-parallel-deployments: true
-  memory: 256M
-  disk-quota: 256M
 build-parameters:
   before-all:
     - builder: custom

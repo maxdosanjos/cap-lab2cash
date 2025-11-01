@@ -1,0 +1,43 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+### Main.A_BusinessPartner
+# @name BusinessPartner_GET
+GET {{server}}/Main/A_BusinessPartner?$top=1
+Authorization: Basic {{username}}:{{password}}
+
+### Main.A_Product
+# @name Product_GET
+GET {{server}}/Main/A_Product?$expand=to_Description&$top=1
+Authorization: Basic {{username}}:{{password}}
+
+### Main.A_SalesOrder
+# @name SalesOrder_GET
+GET {{server}}/Main/A_SalesOrder?$expand=to_Item&$top=1
+Authorization: Basic {{username}}:{{password}}
+
+### Main.A_SalesOrder
+# @name Parameters_SO_POST
+POST {{server}}/Main/A_SalesOrder
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "SalesOrderType": "ORB",
+  "PurchaseOrderByCustomer": "FROMCAP_v2",
+  "SoldToParty": "1000004",
+  "TotalNetAmount": "1000.00", 
+  "to_Item":[
+    {
+        "SalesOrderItem": "1",
+        "Material": "PBR_FERT_100",
+        "RequestedQuantity": "100",
+        "RequestedQuantityUnit": "PC",
+        "ProductionPlant": "PBR1"
+    }
+  ],
+  "Order": {
+    "applied_cashback" : 10000
+  }
+}
