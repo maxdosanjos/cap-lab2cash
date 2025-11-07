@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "build": "mbt build -s '/home/user/projects/lab2cash'; sleep 2;",
+    "build": "mbt build -s '/home/user/projects/cap-lab2cash'; sleep 2;",
     "deploy": "cf deploy mta_archives/lab2cash_1.0.0.mtar -f",
     "//build": "mbt build -t gen --mtar mta.tar",
     "//deploy": "cf deploy gen/mta.mtar -f"
