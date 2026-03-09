@@ -49,7 +49,7 @@
         "kill-cds-processes"
       ],
       "options": {
-        "cwd": "${workspaceFolder}//"
+        "cwd": "${workspaceFolder}/gen/srv/"
       }
     },
     {
@@ -60,7 +60,7 @@
         "npm-install"
       ],
       "options": {
-        "cwd": "${workspaceFolder}//"
+        "cwd": "${workspaceFolder}/gen/srv/"
       }
     },
     {
@@ -76,7 +76,7 @@
         "npm-install"
       ],
       "options": {
-        "cwd": "${workspaceFolder}//"
+        "cwd": "${workspaceFolder}/gen/srv/"
       }
     }
   ]
