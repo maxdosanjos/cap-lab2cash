@@ -54,6 +54,8 @@ service Main @(path: '/Main') {
         wallet_ID   :   String;
     }
 
+    entity Orders_Transactions as projection on db.Orders.Transactions;
+
     //Parameters
     @restrict: [{grant: [
         'UPDATE',
