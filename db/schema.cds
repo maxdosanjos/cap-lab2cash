@@ -1,6 +1,6 @@
 namespace cap.l2l.lab2cash;
 
-using{ cuid, managed } from '@sap/cds/common';
+using { cuid, managed } from '@sap/cds/common';
 
 entity Orders : cuid, managed {
     key sales_order_id      : Integer;

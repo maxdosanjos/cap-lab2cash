@@ -187,9 +187,10 @@ module.exports = (async (srv) =>{
     });
 
     srv.on('updateParameters', async (req) => {
-
+        
         //JS destructuring
         const { parameters } = req.data;
+        //const parameters = req.data.parameters;
         
         const result = await UPDATE(dbe.Parameters).set(parameters);
 
